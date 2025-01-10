@@ -13,7 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30802318-71d0-47fd-90d1-c0ba07eec289" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HallCrawl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HallCrawl/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HallCrawl.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/HallCrawl.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_PickUp_Rifle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_PickUp_Rifle.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_PickUp_Rifle_Auto.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/FirstPerson/Blueprints/BP_PickUp_Rifle_Auto.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/HallCrawl/HallCrawlWeaponComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HallCrawl/HallCrawlWeaponComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.5/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/HallCrawl/HallCrawlWeaponComponent.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/HallCrawl/HallCrawlWeaponComponent.h" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -140,7 +148,7 @@
       <updated>1736187627224</updated>
       <workItem from="1736187655002" duration="8000" />
       <workItem from="1736188943525" duration="1582000" />
-      <workItem from="1736357116164" duration="1236000" />
+      <workItem from="1736357116164" duration="3786000" />
     </task>
     <servers />
   </component>

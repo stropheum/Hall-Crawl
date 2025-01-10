@@ -68,18 +68,33 @@ void UHallCrawlWeaponComponent::Fire()
 
 bool UHallCrawlWeaponComponent::AttachWeapon(AHallCrawlCharacter* TargetCharacter)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Cyan, TEXT("AttachWeapon"));
+	UE_LOG(LogTemp, Warning, TEXT("AttachWeapon"));
+			
 	Character = TargetCharacter;
-
+	
 	// Check that the character is valid, and has no weapon component yet
-	if (Character == nullptr || Character->GetInstanceComponents().FindItemByClass<UHallCrawlWeaponComponent>())
+	if (Character == nullptr)// || Character->GetInstanceComponents().FindItemByClass<UHallCrawlWeaponComponent>())
 	{
 		return false;
 	}
-
+	// If we're already holding a weapon make sure to drop it first
+	UHallCrawlWeaponComponent* CurrentWeapon;
+	Character->GetMesh1P()->GetAttachChildren().FindItemByClass<UHallCrawlWeaponComponent>(&CurrentWeapon);
+	if (!IsValid(CurrentWeapon))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("No existing weapon found"));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Cyan, TEXT("Already Holding Weapon"));
+		CurrentWeapon->DestroyComponent();
+	}
+	
 	// Attach the weapon to the First Person Character
-	FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
+	const FAttachmentTransformRules AttachmentRules(EAttachmentRule::SnapToTarget, true);
 	AttachToComponent(Character->GetMesh1P(), AttachmentRules, FName(TEXT("GripPoint")));
-
+	
 	// Set up action bindings
 	if (APlayerController* PlayerController = Cast<APlayerController>(Character->GetController()))
 	{
@@ -88,7 +103,7 @@ bool UHallCrawlWeaponComponent::AttachWeapon(AHallCrawlCharacter* TargetCharacte
 			// Set the priority of the mapping to 1, so that it overrides the Jump action with the Fire action when using touch input
 			Subsystem->AddMappingContext(FireMappingContext, 1);
 		}
-
+	
 		if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
 		{
 			// Fire
